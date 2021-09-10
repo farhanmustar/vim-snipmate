@@ -530,7 +530,7 @@ fun! snipMate#GetSnippetsForWordBelowCursorForComplete(word) abort
 			call extend(snippets, map(keys(dict),
 						\ '{ "word" : trigger, "menu" : v:val, "dup" : 1 }'))
 		else
-			call add(snippets, { "word" : trigger })
+			call add(snippets, { "word" : trigger, "menu": "[snip]" })
 		endif
 	endfor
 	return filter(snippets,
